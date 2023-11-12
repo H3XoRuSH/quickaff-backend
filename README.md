@@ -29,6 +29,8 @@ Install the required dependencies by running `npm install`. Also, this applicati
 
       
 
+## Testing
+
 ### Scripts
 
 There are two available scripts:
@@ -40,6 +42,8 @@ You can run these scripts via `npm run {your_script}`.
 
 
 
-### Testing
+### Running
 
 While running, you can access the application on `localhost` on port `3000`.
+
+> Suggestion: Use [Postman](https://www.postman.com/) to consume the application's APIs and [Mockoon](https://mockoon.com/) to test and create mock APIs.
