@@ -42,8 +42,15 @@ You can run these scripts via `npm run {your_script}`.
 
 
 
+### Documentation
+
+You can find the API documentation [here](https://gab-samonte.notion.site/QuickAff-API-Documentation-6655bf380ca4481ebe2de5a735e7b5c0?pvs=4) (actual link: https://tinyurl.com/QuickAffAPIDocu).
+
+
+
 ### Running
 
 While running, you can access the application on `localhost` on port `3000`.
 
 > Suggestion: Use [Postman](https://www.postman.com/) to consume the application's APIs and [Mockoon](https://mockoon.com/) to test and create mock APIs.
+
