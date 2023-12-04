@@ -21,7 +21,7 @@ Install the required dependencies by running `npm install`. Also, this applicati
       ```sql
       CREATE TABLE public.users
       (
-         id serial NOT NULL,
+         id integer NOT NULL,
          last_name text,
       	first_name text,
       	middle_name text,
