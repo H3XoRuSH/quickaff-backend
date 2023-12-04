@@ -21,13 +21,20 @@ Install the required dependencies by running `npm install`. Also, this applicati
       ```sql
       CREATE TABLE public.users
       (
-          id serial NOT NULL,
-          name text,
-          PRIMARY KEY (id)
+         id serial NOT NULL,
+         last_name text,
+      	first_name text,
+      	middle_name text,
+      	nickname text, 
+      	up_mail text,
+      	course text,
+      	app_batch text,
+      	mem_status text,
+      	renewal_payment_status text,
+      	committee text,
+         PRIMARY KEY (id)
       );
       ```
-
-      
 
 ## Testing
 
