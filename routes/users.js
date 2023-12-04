@@ -8,7 +8,27 @@ router
     pool
       .query("SELECT * FROM users")
       .then((result) => {
-        res.json(result.rows);
+        const actual_res = result.rows.map((item) => {
+          const mem_status_fixed = item.mem_status;
+          const payment_status_fixed = item.renewal_payment_status;
+
+          const new_mem_status =
+            mem_status_fixed == "active"
+              ? "Active"
+              : mem_status_fixed == "inactive"
+              ? "Inactive"
+              : "Alumni";
+          const new_payment_status =
+            payment_status_fixed == "paid" ? "Paid" : "Not Paid";
+
+          return {
+            ...item,
+            mem_status: new_mem_status,
+            renewal_payment_status: new_payment_status,
+          };
+        });
+
+        res.json(actual_res);
       })
       .catch((err) => {
         console.error(err);
@@ -92,7 +112,27 @@ router.get("/:student_id", (req, res) => {
   pool
     .query("SELECT * FROM users WHERE student_id = $1", [student_id])
     .then((result) => {
-      res.json(result.rows);
+      const actual_res = result.rows.map((item) => {
+        const mem_status_fixed = item.mem_status;
+        const payment_status_fixed = item.renewal_payment_status;
+
+        const new_mem_status =
+          mem_status_fixed == "active"
+            ? "Active"
+            : mem_status_fixed == "inactive"
+            ? "Inactive"
+            : "Alumni";
+        const new_payment_status =
+          payment_status_fixed == "paid" ? "Paid" : "Not Paid";
+
+        return {
+          ...item,
+          mem_status: new_mem_status,
+          renewal_payment_status: new_payment_status,
+        };
+      });
+
+      res.json(actual_res);
     })
     .catch((err) => {
       console.error(err);
