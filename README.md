@@ -16,24 +16,28 @@ Install the required dependencies by running `npm install`. Also, this applicati
 
 2. In the database, create these tables if not present:
 
+   edit `create.sql` for table
+   run `psql -U postgres -d postgres -f create.sql` to edit/update the user table
    1. `users` table
 
       ```sql
+      CREATE TYPE public.mem_status AS ENUM ('active', 'inactive');
+      CREATE TYPE public.renewal_payment_status AS ENUM ('paid', 'not paid');
       CREATE TABLE public.users
-      (
-         id serial NOT NULL,
-         last_name text,
-      	first_name text,
-      	middle_name text,
-      	nickname text, 
-      	up_mail text,
-      	course text,
-      	app_batch text,
-      	mem_status text,
-      	renewal_payment_status text,
-      	committee text,
-         PRIMARY KEY (id)
-      );
+         (
+               student_id INTEGER NOT NULL,
+               last_name text,
+               first_name text,
+               middle_name text,
+               nickname text,
+               course text,
+               up_mail text,
+               app_batch text,
+               mem_status public.mem_status,
+               renewal_payment_status public.renewal_payment_status,
+               committee text,
+               PRIMARY KEY (student_id)
+         );
       ```
 
 ## Testing
