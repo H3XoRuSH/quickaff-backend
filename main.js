@@ -1,5 +1,5 @@
 const express = require("express");
-var cors = require('cors')
+var cors = require("cors");
 const pool = require("./db");
 const bodyParser = require("body-parser");
 
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 const userRouter = require("./routes/users");
-app.use(cors())
+app.use(cors());
 app.use("/users", userRouter);
 
 app.listen(3001);
